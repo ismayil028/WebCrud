@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.web.crud;
+package com.web.crud.Worker;
 
+import com.web.crud.Admin;
 import com.web.crud.Database.*;
+import com.web.crud.Result;
 import java.sql.*;
 
 /**
@@ -18,8 +20,8 @@ public class LoginYoxlayan {
         String result = "";
         try {
             Statement stmt = DatabaseQosulma.getStatement();
-            String query = "select * from admin where username='" + a.username + "' and password ='"
-                    + a.password + "';";
+            String query = "select * from admin where username='" + a.getUsername() + "' and password ='"
+                    + a.getPasswod() + "';";
             ResultSet rs = stmt.executeQuery(query);
             if (rs.next()) {
                 result = Result.SUCCESS;

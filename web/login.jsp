@@ -7,6 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="com.web.crud.*" %>
 <%@page import="com.web.crud.Database.*" %>
+<%@page import="com.web.crud.Worker.LoginYoxlayan" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,18 +17,18 @@
     <body>
         <%
             Admin a = new Admin();
-            a.username = request.getParameter("name");
-            a.password = request.getParameter("password");
+            a.setUsername(request.getParameter("name"));  
+            a.setPasswod(request.getParameter("password"));
             String result = LoginYoxlayan.yoxla(a);
             
             
             if (result.equals(Result.SUCCESS)) {
-                response.sendRedirect("https://google.com");
+                response.sendRedirect("welcome.jsp");
             }
             else if (result.equals(Result.FAILURE)) {
             }
             else {
-                response.sendRedirect("www.fb.com");
+                response.sendRedirect("fb.com");
             }
         %>
 

@@ -14,7 +14,7 @@ public class DatabaseQosulma {
     private static Connection con;
 
     public static Connection getConnection() {
-        Connection c = null;
+        con = null;
         try {
             Class.forName(CLASSNAME);
             con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
@@ -22,7 +22,7 @@ public class DatabaseQosulma {
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println(e);
         }
-        return c;
+        return con;
 
     }
 
