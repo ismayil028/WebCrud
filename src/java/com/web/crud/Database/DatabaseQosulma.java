@@ -1,6 +1,8 @@
 package com.web.crud.Database;
 
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class DatabaseQosulma {
 
@@ -27,6 +29,7 @@ public class DatabaseQosulma {
     public static Statement getStatement() {
         Statement stmt = null;
         try {
+            
             stmt = getConnection().createStatement();
         } catch (SQLException ex) {
             System.out.println(ex);

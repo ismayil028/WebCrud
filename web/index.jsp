@@ -11,11 +11,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body><form>
-            <center>form>
-                <h1>Simple CRUD Web App</h1>
+    <body><form action="login.jsp" method="post">
+            <center>
+                <h1>Simple CRUD Web Application</h1>
                 Username: <input type="text" name="name" required="true"><br>
-                Password: <input type="password" name="password" required="true"><br>
+                Password: <input type="text" name="password" required="true"><br>
                 <input type="submit" value="Login" /> &nbsp;&nbsp;<input type="submit" value="Reset">
             </center>
         </form>
