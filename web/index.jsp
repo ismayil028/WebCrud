@@ -15,7 +15,7 @@
             <center>form>
                 <h1>Simple CRUD Web App</h1>
                 Username: <input type="text" name="name" required="true"><br>
-                Password: <input type="password" name="name" required="true"><br>
+                Password: <input type="password" name="password" required="true"><br>
                 <input type="submit" value="Login" /> &nbsp;&nbsp;<input type="submit" value="Reset">
             </center>
         </form>
