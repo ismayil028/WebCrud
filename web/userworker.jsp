@@ -20,15 +20,17 @@
             u.setName(request.getParameter("name"));
             u.setAge(Integer.parseInt(request.getParameter("age")));
             u.setGender(request.getParameter("gender"));
-            String result = UserWorker.addUser(u);
-            if(result.equals(Result.ACCESS)){
-            response.sendRedirect("addUser.jsp");
-            }else if (result.equals(Result.PROBLEM)){
-            response.sendRedirect("https://google.com");
-            }else {
-            response.sendRedirect("index.jsp");
-            }
             
+            String result = UserWorker.addUser(u);
+            
+            if (result.equals(Result.ACCESS)) {
+                response.sendRedirect("addUser.jsp");
+            } else if (result.equals(Result.PROBLEM)) {
+                response.sendRedirect("https://google.com");
+            } else {
+                out.println("3cu else");
+            }
+
         %>
     </body>
 </html>

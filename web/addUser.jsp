@@ -13,7 +13,7 @@
     </head>
     <body>
     <center>
-        <form action="UserWork.jsp" method="post">
+        <form action="userworker.jsp" method="post">
 
             <h1>****Add User****</h1>
             Name : <input type="text" name="name">

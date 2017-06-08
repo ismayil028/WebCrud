@@ -40,10 +40,14 @@ public class DatabaseQosulma {
     public static PreparedStatement getPreparedStatement(String query) {
         PreparedStatement ps = null;
         try {
-            ps = getConnection().prepareStatement(query);
+             Class.forName(CLASSNAME);
+            con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+            ps = con.prepareStatement(query);
             
         } catch (SQLException e) {
             System.out.println(e);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(DatabaseQosulma.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         return ps;

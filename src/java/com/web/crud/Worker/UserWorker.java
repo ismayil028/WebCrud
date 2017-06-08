@@ -9,12 +9,13 @@ public class UserWorker {
     public static String addUser(User a) {
         String result = "";
         try {
-            String query = "insert into user(name,age,gender) values(?,?,);";
+            String query = "insert into user(name,age,gender) values(?,?,?);";
             PreparedStatement ps = DatabaseQosulma.getPreparedStatement(query);
             ps.setString(1, a.getName());
             ps.setInt(2, a.getAge());
             ps.setString(3, a.getGender());
-            int i = ps.executeUpdate();
+            int i = ps.executeUpdate(query);
+            
             if (i == 1) {
                 result = Result.SUCCESS;
             } else {
